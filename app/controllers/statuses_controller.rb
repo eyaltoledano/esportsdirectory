@@ -3,33 +3,18 @@ class StatusesController < ApplicationController
   # GET /statuses.json
   def index
     @statuses = Status.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @statuses }
-    end
   end
 
   # GET /statuses/1
   # GET /statuses/1.json
   def show
     @status = Status.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @status }
-    end
   end
 
   # GET /statuses/new
   # GET /statuses/new.json
   def new
     @status = Status.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @status }
-    end
   end
 
   # GET /statuses/1/edit
@@ -76,7 +61,7 @@ class StatusesController < ApplicationController
     @status.destroy
 
     respond_to do |format|
-      format.html { redirect_to statuses_url }
+      format.html { redirect_to statuses_url, notice: "Deleted status." }
       format.json { head :no_content }
     end
   end

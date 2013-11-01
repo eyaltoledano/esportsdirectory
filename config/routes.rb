@@ -1,7 +1,5 @@
 Esportsdirectory::Application.routes.draw do
   resources :statuses
-
-
   resources :users
 
 
